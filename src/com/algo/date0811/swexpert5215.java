@@ -11,8 +11,8 @@ public class swexpert5215 {
 		Scanner sc = new Scanner(System.in);
 		T = sc.nextInt();
 		for (int tc = 1; tc <= T; tc++) {
-			food = sc.nextInt();
-			kal = sc.nextInt();
+			food = sc.nextInt();//재료의 개수
+			kal = sc.nextInt();//제한 칼로리 
 			isSelected = new boolean[food];
 			menu = new int[food][2];
 			for (int i = 0; i < food; i++) {
@@ -29,17 +29,16 @@ public class swexpert5215 {
 	}
 
 	private static void subset(int cnt) {
-		
 		if (cnt == food) {
 			sumKal = 0;
 			sumFood = 0;
 			for (int i = 0; i < food; i++) {
 				if (isSelected[i]) {
-					sumKal += menu[i][1];
-					sumFood += menu[i][0];
+					sumKal += menu[i][1];// menu[i][0]=점수,menu[i][1]=칼로리
+					sumFood += menu[i][0];//맛 점수 합
 				}
 			}
-			if (sumKal <= kal) {
+			if (sumKal <= kal) {// 제한칼로리
 				//System.out.println(sumKal+" "+sumFood);
 				if (MAX < sumFood) {
 					MAX=sumFood;
