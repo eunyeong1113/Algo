@@ -29,7 +29,6 @@ public class baekjoon1181{
 				
 			}
 		});
-		
 		for (int i = 0; i < num; i++) {
 			if(i+1<num && s[i].equals(s[i+1]))
 				continue;
